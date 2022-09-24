@@ -1,5 +1,5 @@
 import { t, Trans } from "@lingui/macro";
-import { Box, Divider, Link, Paper, SvgIcon, Typography } from "@mui/material";
+import { Box, Link, Paper, SvgIcon, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Icon, NavItem } from "@olympusdao/component-library";
 import React from "react";
@@ -34,12 +34,12 @@ const NavContent: React.VFC = () => {
       <Box className="dapp-sidebar-inner" display="flex" justifyContent="space-between" flexDirection="column">
         <div className="dapp-menu-top">
           <Box className="branding-header">
-            <Link href="https://olympusdao.finance" target="_blank" rel="noopener noreferrer">
+            <Link href="https://treesnclouds.com/" target="_blank" rel="noopener noreferrer">
               <SvgIcon
                 color="primary"
-                viewBox="0 0 151 100"
+                viewBox="0 0 400 200"
                 component={OlympusIcon}
-                style={{ minWidth: "151px", minHeight: "98px", width: "151px" }}
+                style={{ minWidth: "150px", minHeight: "100px", width: "170px" }}
               />
             </Link>
 
@@ -66,16 +66,6 @@ const NavContent: React.VFC = () => {
                   <NavItem to="/wrap" icon="wrap" label={t`Wrap`} />
 
                   <NavItem icon="bridge" label={t`Bridge`} to="/bridge" />
-
-                  <Box className="menu-divider">
-                    <Divider />
-                  </Box>
-
-                  <NavItem href="https://pro.olympusdao.finance/" icon="olympus" label={t`Olympus Pro`} />
-
-                  <Box className="menu-divider">
-                    <Divider />
-                  </Box>
                 </>
               ) : (
                 <>
@@ -84,34 +74,20 @@ const NavContent: React.VFC = () => {
                   <NavItem icon="bridge" label={t`Bridge`} to="/bridge" />
                 </>
               )}
-
-              <NavItem href="https://forum.olympusdao.finance/" icon="forum" label={t`Forum`} />
-
-              <NavItem href="https://vote.olympusdao.finance/" icon="governance" label={t`Governance`} />
-
-              <NavItem href="https://docs.olympusdao.finance/" icon="docs" label={t`Docs`} />
-
-              <NavItem href="https://immunefi.com/bounty/olympus/" icon="bug-report" label={t`Bug Bounty`} />
-
-              <NavItem href="https://grants.olympusdao.finance/" icon="grants" label={t`Grants`} />
             </div>
           </div>
         </div>
 
         <StyledBox display="flex" justifyContent="space-between" paddingX="50px" paddingY="24px">
-          <Link href="https://github.com/OlympusDAO" target="_blank" rel="noopener noreferrer">
+          <Link href="https://github.com/TreesNClouds" target="_blank" rel="noopener noreferrer">
             <Icon name="github" className={classes.gray} />
           </Link>
 
-          <Link href="https://olympusdao.medium.com/" target="_blank" rel="noopener noreferrer">
-            <Icon name="medium" className={classes.gray} />
-          </Link>
-
-          <Link href="https://twitter.com/OlympusDAO" target="_blank" rel="noopener noreferrer">
+          <Link href="https://twitter.com/TreesNCloudsDDM" target="_blank" rel="noopener noreferrer">
             <Icon name="twitter" className={classes.gray} />
           </Link>
 
-          <Link href="https://discord-invite.olympusdao.finance" target="_blank" rel="noopener noreferrer">
+          <Link href="https://discord.gg/treesnclouds" target="_blank" rel="noopener noreferrer">
             <Icon name="discord" className={classes.gray} />
           </Link>
         </StyledBox>
