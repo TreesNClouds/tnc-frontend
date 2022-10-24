@@ -1,10 +1,10 @@
 import { t, Trans } from "@lingui/macro";
-import { Box, Link, Paper, SvgIcon, Typography } from "@mui/material";
+import { Box, Link, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Icon, NavItem } from "@olympusdao/component-library";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { ReactComponent as OlympusIcon } from "src/assets/icons/olympus-nav-header.svg";
+import tncLogo from "src/assets/images/tnc-logo.png";
 import WalletAddressEns from "src/components/TopBar/Wallet/WalletAddressEns";
 import { sortByDiscount } from "src/helpers/bonds/sortByDiscount";
 import { Environment } from "src/helpers/environment/Environment/Environment";
@@ -35,12 +35,14 @@ const NavContent: React.VFC = () => {
         <div className="dapp-menu-top">
           <Box className="branding-header">
             <Link href="https://treesnclouds.com/" target="_blank" rel="noopener noreferrer">
-              <SvgIcon
-                color="primary"
-                viewBox="0 0 400 200"
-                component={OlympusIcon}
-                style={{ minWidth: "150px", minHeight: "100px", width: "170px" }}
-              />
+              {/*<SvgIcon*/}
+              {/*  color="primary"*/}
+              {/*  viewBox="0 0 400 200"*/}
+              {/*  component={OlympusIcon}*/}
+              {/*  style={{ minWidth: "150px", minHeight: "100px", width: "170px" }}*/}
+              {/*/>*/}
+
+              <img style={{ height: "175px", width: "175px" }} src={tncLogo} alt="Logo" />
             </Link>
 
             <WalletAddressEns />

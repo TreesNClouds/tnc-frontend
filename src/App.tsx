@@ -11,6 +11,7 @@ import {
 import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import DarkBg from "src/assets/backgrounds/dark-bg.png";
 import Messages from "src/components/Messages/Messages";
 import { MigrationCallToAction } from "src/components/MigrationCallToAction";
 import { MigrationNotification } from "src/components/MigrationNotification";
@@ -55,6 +56,11 @@ const classes = {
 };
 
 const StyledDiv = styled("div")(({ theme }) => ({
+  ["body"]: {
+    [theme.breakpoints.up("md")]: {
+      backgroundImage: DarkBg,
+    },
+  },
   [`& .${classes.drawer}`]: {
     [theme.breakpoints.up("md")]: {
       width: drawerWidth,
@@ -170,7 +176,7 @@ function App() {
   // ... been reloaded within App.
   useEffect(() => {
     if (shouldTriggerSafetyCheck()) {
-      dispatch(info("Safety Check: Always verify you're on app.olympusdao.finance!"));
+      dispatch(info("Safety Check: Always verify you're on app.treesnclouds.com!"));
     }
     loadDetails("app");
   }, []);

@@ -24,10 +24,10 @@ export const MarketCap: React.FC<AbstractedMetricProps & MetricSubgraphProps> = 
   const { data: marketCap } = useMarketCap(props.subgraphUrl);
   const _props: MetricProps = {
     ...props,
-    label: t`OHM Market Cap`,
-    tooltip: t`Market capitalization is the dollar value of the outstanding OHM tokens. It is calculated here as the price of OHM multiplied by the circulating supply. 
+    label: t`TOKN Market Cap`,
+    tooltip: t`Market capitalization is the dollar value of the outstanding TOKN tokens. It is calculated here as the price of TOKN multiplied by the circulating supply. 
     
-    As the displayed OHM price is rounded to 2 decimal places, a manual calculation using the displayed values is likely to slightly differ from the reported market cap. The reported market cap is accurate, as it uses the unrounded price of OHM.
+    As the displayed TOKN price is rounded to 2 decimal places, a manual calculation using the displayed values is likely to slightly differ from the reported market cap. The reported market cap is accurate, as it uses the unrounded price of TOKN.
 
     Note: other sources may be inaccurate.`,
   };
