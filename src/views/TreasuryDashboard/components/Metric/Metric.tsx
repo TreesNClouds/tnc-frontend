@@ -248,7 +248,7 @@ export const TreasuryBalance: React.FC<AbstractedMetricProps & MetricSubgraphPro
   const { data: treasuryMarketValue } = useTreasuryMarketValue(props.subgraphUrl);
   const _props: MetricProps = {
     ...props,
-    label: t`Treasury Balance`,
+    label: t`Treasury Balances`,
   };
 
   if (treasuryMarketValue) _props.metric = formatCurrency(treasuryMarketValue);
