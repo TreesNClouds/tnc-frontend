@@ -85,7 +85,7 @@ const NavContent: React.VFC = () => {
             <Icon name="github" className={classes.gray} />
           </Link>
 
-          <Link href="https://twitter.com/TreesNCloudsDDM" target="_blank" rel="noopener noreferrer">
+          <Link href="https://twitter.com/trees_n_clouds" target="_blank" rel="noopener noreferrer">
             <Icon name="twitter" className={classes.gray} />
           </Link>
 

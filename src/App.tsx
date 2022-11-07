@@ -240,14 +240,14 @@ function App() {
                     path="/stake"
                     element={<StakeVersionContainer setMigrationModalOpen={setMigrationModalOpen} />}
                   />
-                  <Route path="/v1-stake" element={<V1Stake setMigrationModalOpen={setMigrationModalOpen} />} />
-                  <Route path="/give/*" element={<Give />} />
+                  {/*<Route path="/v1-stake" element={<V1Stake setMigrationModalOpen={setMigrationModalOpen} />} />*/}
+                  {/*<Route path="/give/*" element={<Give />} />*/}
 
-                  <Route path="/olympusgive" element={<Navigate to="/give" />} />
-                  <Route path="/olygive" element={<Navigate to="/give" />} />
-                  <Route path="/tyche" element={<Navigate to="/give" />} />
-                  <Route path="/olympusdaogive" element={<Navigate to="/give" />} />
-                  <Route path="/ohmgive" element={<Navigate to="/give" />} />
+                  {/*<Route path="/olympusgive" element={<Navigate to="/give" />} />*/}
+                  {/*<Route path="/olygive" element={<Navigate to="/give" />} />*/}
+                  {/*<Route path="/tyche" element={<Navigate to="/give" />} />*/}
+                  {/*<Route path="/olympusdaogive" element={<Navigate to="/give" />} />*/}
+                  {/*<Route path="/ohmgive" element={<Navigate to="/give" />} />*/}
 
                   <Route path="/wrap" element={<Wrap />} />
                   <Route path="/zap" element={<Zap />} />
@@ -255,8 +255,8 @@ function App() {
                   <Route path="/bridge" element={<Bridge />} />
                   <Route path="/dashboard/*" element={<TreasuryDashboard />} />
 
-                  <Route path={"/info/*"} element={<Wallet open={true} component="info" />} />
-                  <Route path={"/utility"} element={<Wallet open={true} component="utility" />} />
+                  {/*<Route path={"/info/*"} element={<Wallet open={true} component="info" />} />*/}
+                  {/*<Route path={"/utility"} element={<Wallet open={true} component="utility" />} />*/}
                   <Route path={"/wallet/history"} element={<Wallet open={true} component="wallet/history" />} />
                   <Route path="/wallet" element={<Wallet open={true} component="wallet" />}></Route>
                   <Route path="*" element={<NotFound />} />
