@@ -1,5 +1,5 @@
 import { t, Trans } from "@lingui/macro";
-import { Box, Link, Paper, Typography } from "@mui/material";
+import { Box, Divider, Link, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Icon, NavItem } from "@olympusdao/component-library";
 import React from "react";
