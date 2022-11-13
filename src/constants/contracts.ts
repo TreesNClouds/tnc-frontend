@@ -2,11 +2,10 @@ import {
   BALANCER_VAULT_ADDRESSSES,
   BOND_AGGREGATOR_ADDRESSES,
   BOND_DEPOSITORY_ADDRESSES,
-  BOND_FIXED_EXPIRY_SDA_ADDRESSES,
   BOND_FIXED_EXPIRY_TELLER_ADDRESSES,
-  BOND_FIXED_TERM_SDA_ADDRESSES,
   BOND_FIXED_TERM_TELLER_ADDRESSES,
   DEV_FAUCET,
+  DISTRIBUTOR_ADDRESSES,
   GIVE_ADDRESSES,
   MIGRATOR_ADDRESSES,
   OP_BOND_DEPOSITORY_ADDRESSES,
@@ -17,9 +16,7 @@ import { Contract } from "src/helpers/contracts/Contract";
 import {
   BalancerVault__factory,
   BondDepository__factory,
-  BondFixedExpirySDA__factory,
   BondFixedExpiryTeller__factory,
-  BondFixedTermSDA__factory,
   BondFixedTermTeller__factory,
   CrossChainMigrator__factory,
   OlympusGiving__factory,
@@ -29,6 +26,7 @@ import {
 } from "src/typechain";
 import { BondAggregator__factory } from "src/typechain/factories/BondAggregator__factory";
 import { DevFaucet__factory } from "src/typechain/factories/DevFaucet__factory";
+import { OlympusDistributor__factory } from "src/typechain/factories/OlympusDistributor__factory";
 
 export const BOND_DEPOSITORY_CONTRACT = new Contract({
   factory: BondDepository__factory,
@@ -90,20 +88,14 @@ export const BOND_FIXED_EXPIRY_TELLER = new Contract({
   addresses: BOND_FIXED_EXPIRY_TELLER_ADDRESSES,
 });
 
-export const BOND_FIXED_EXPIRY_SDA_CONTRACT = new Contract({
-  factory: BondFixedExpirySDA__factory,
-  name: "Bond Fixed Expiration SDA Contract",
-  addresses: BOND_FIXED_EXPIRY_SDA_ADDRESSES,
-});
-
-export const BOND_FIXED_TERM_SDA_CONTRACT = new Contract({
-  factory: BondFixedTermSDA__factory,
-  name: "Bond Fixed Term SDA Contract",
-  addresses: BOND_FIXED_TERM_SDA_ADDRESSES,
-});
-
 export const BOND_FIXED_TERM_TELLER = new Contract({
   factory: BondFixedTermTeller__factory,
   name: "Bond Fixed Term Teller Contract",
   addresses: BOND_FIXED_TERM_TELLER_ADDRESSES,
+});
+
+export const DISTRIBUTOR_CONTRACT = new Contract({
+  factory: OlympusDistributor__factory,
+  name: "Distributor Contract",
+  addresses: DISTRIBUTOR_ADDRESSES,
 });
