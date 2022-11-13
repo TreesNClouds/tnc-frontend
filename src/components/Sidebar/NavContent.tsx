@@ -52,7 +52,7 @@ const NavContent: React.VFC = () => {
             <div className="dapp-nav" id="navbarNav">
               {chain.id === networks.MAINNET ? (
                 <>
-                  <NavItem className={"nav-item__tnc"} to="/dashboard" icon="dashboard" label={t`Dashboard`} />
+                  <NavItem to="/dashboard" icon="dashboard" label={t`Dashboard`} />
 
                   <NavItem to="/bonds" icon="bond" label={t`Bond`}>
                     <Bonds />
