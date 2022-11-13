@@ -73,7 +73,7 @@ const NavContent: React.VFC = () => {
                     <Divider />
                   </Box>
 
-                  <NavItem href="https://pro.olympusdao.finance/" icon="olympus" label={t`Olympus Pro`} />
+                  {/*<NavItem href="https://pro.olympusdao.finance/" icon="olympus" label={t`Olympus Pro`} />*/}
 
                   <Box className="menu-divider">
                     <Divider />
@@ -87,15 +87,15 @@ const NavContent: React.VFC = () => {
                 </>
               )}
 
-              <NavItem href="https://forum.olympusdao.finance/" icon="forum" label={t`Forum`} />
+              {/*<NavItem href="https://forum.olympusdao.finance/" icon="forum" label={t`Forum`} />*/}
 
-              <NavItem href="https://vote.olympusdao.finance/" icon="governance" label={t`Governance`} />
+              {/*<NavItem href="https://vote.olympusdao.finance/" icon="governance" label={t`Governance`} />*/}
 
-              <NavItem href="https://docs.olympusdao.finance/" icon="docs" label={t`Docs`} />
+              <NavItem href="https://docs.treesnclouds.com/" icon="docs" label={t`Docs`} />
 
-              <NavItem href="https://immunefi.com/bounty/olympus/" icon="bug-report" label={t`Bug Bounty`} />
+              {/*<NavItem href="https://immunefi.com/bounty/olympus/" icon="bug-report" label={t`Bug Bounty`} />*/}
 
-              <NavItem href="https://grants.olympusdao.finance/" icon="grants" label={t`Grants`} />
+              {/*<NavItem href="https://grants.olympusdao.finance/" icon="grants" label={t`Grants`} />*/}
             </div>
           </div>
         </div>
