@@ -110,7 +110,7 @@ export const GOhmCirculatingSupply: React.FC<AbstractedMetricProps> = props => {
   const _props: MetricProps = {
     ...props,
     label: t`gTOKN Circulating Supply / Total`,
-    tooltip: t`gTOKN supply is synthetically derived from OHM supply divided by the index.`,
+    tooltip: t`gTOKN supply is synthetically derived from TOKN supply divided by the index.`,
   };
 
   _props.metric = `- / -`;
@@ -170,7 +170,7 @@ export const CurrentIndex: React.FC<AbstractedMetricProps & MetricSubgraphProps>
   const _props: MetricProps = {
     ...props,
     label: t`Current Index`,
-    tooltip: t`The current index tracks the amount of sTOKN accumulated since the beginning of staking. Basically, how much sOHM one would have if they staked and held 1 TOKN from launch.`,
+    tooltip: t`The current index tracks the amount of sTOKN accumulated since the beginning of staking. Basically, how much sTOKN one would have if they staked and held 1 TOKN from launch.`,
   };
 
   if (currentIndex) _props.metric = `${formatNumber(currentIndex, 2)} sTOKN`;

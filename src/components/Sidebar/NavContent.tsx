@@ -50,13 +50,13 @@ const NavContent: React.VFC = () => {
 
           <div className="dapp-menu-links">
             <div className="dapp-nav" id="navbarNav">
-              {chain.id === networks.MAINNET ? (
+              {chain.id == networks.MAINNET ? (
                 <>
                   <NavItem to="/dashboard" icon="dashboard" label={t`Dashboard`} />
 
                   <NavItem to="/bonds" icon="bond" label={t`Bond`}>
                     <Bonds />
-                    <InverseBonds />
+                    {/*<InverseBonds />*/}
                   </NavItem>
 
                   <NavItem to="/stake" icon="stake" label={t`Stake`} />
