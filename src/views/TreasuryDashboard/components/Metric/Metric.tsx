@@ -27,10 +27,10 @@ export const MarketCap: React.FC<AbstractedMetricProps & MetricSubgraphProps> = 
   const { data: marketCap } = useMarketCap(props.subgraphUrl);
   const _props: MetricProps = {
     ...props,
-    label: t`OHM Market Cap`,
-    tooltip: t`Market capitalization is the dollar value of the outstanding OHM tokens. It is calculated here as the price of OHM multiplied by the circulating supply. 
+    label: t`TOKN Market Cap`,
+    tooltip: t`Market capitalization is the dollar value of the outstanding TOKN tokens. It is calculated here as the price of TOKN multiplied by the circulating supply. 
     
-    As the displayed OHM price is rounded to 2 decimal places, a manual calculation using the displayed values is likely to slightly differ from the reported market cap. The reported market cap is accurate, as it uses the unrounded price of OHM.
+    As the displayed TOKN price is rounded to 2 decimal places, a manual calculation using the displayed values is likely to slightly differ from the reported market cap. The reported market cap is accurate, as it uses the unrounded price of TOKN.
 
     Note: other sources may be inaccurate.`,
   };
@@ -48,7 +48,7 @@ export const OHMPrice: React.FC<AbstractedMetricProps> = props => {
   const { data: ohmPrice } = useOhmPrice();
   const _props: MetricProps = {
     ...props,
-    label: "OHM " + t`Price`,
+    label: "TOKN " + t`Price`,
     tooltip: t`This price is sourced from the subgraph, so will lag the real-time market rate.`,
   };
 
@@ -65,7 +65,7 @@ export const OHMPriceFromSubgraph: React.FC<AbstractedMetricProps & MetricSubgra
   const { data: ohmPrice } = useOhmPriceFromSubgraph(props.subgraphUrl);
   const _props: MetricProps = {
     ...props,
-    label: "OHM " + t`Price`,
+    label: "TOKN " + t`Price`,
   };
 
   if (ohmPrice) _props.metric = formatCurrency(ohmPrice, 2);
@@ -82,7 +82,7 @@ export const SOHMPrice: React.FC<AbstractedMetricProps> = props => {
 
   const _props: MetricProps = {
     ...props,
-    label: "sOHM " + t`Price`,
+    label: "sTOKN " + t`Price`,
   };
 
   if (ohmPrice) _props.metric = formatCurrency(ohmPrice, 2);
@@ -96,8 +96,8 @@ export const OhmCirculatingSupply: React.FC<AbstractedMetricProps & MetricSubgra
   const { data: circSupply } = useOhmCirculatingSupply(props.subgraphUrl);
   const _props: MetricProps = {
     ...props,
-    label: t`OHM Circulating Supply / Total`,
-    tooltip: t`Circulating supply is the quantity of outstanding OHM not owned by the protocol (excluding OHM in LPs).`,
+    label: t`TOKN Circulating Supply / Total`,
+    tooltip: t`Circulating supply is the quantity of outstanding OHM not owned by the protocol (excluding TOKN in LPs).`,
   };
 
   if (circSupply && totalSupply) _props.metric = `${formatNumber(circSupply)} / ${formatNumber(totalSupply)}`;
@@ -109,8 +109,8 @@ export const OhmCirculatingSupply: React.FC<AbstractedMetricProps & MetricSubgra
 export const GOhmCirculatingSupply: React.FC<AbstractedMetricProps> = props => {
   const _props: MetricProps = {
     ...props,
-    label: t`gOHM Circulating Supply / Total`,
-    tooltip: t`gOHM supply is synthetically derived from OHM supply divided by the index.`,
+    label: t`gTOKN Circulating Supply / Total`,
+    tooltip: t`gTOKN supply is synthetically derived from TOKN supply divided by the index.`,
   };
 
   _props.metric = `- / -`;
@@ -129,16 +129,16 @@ export const BackingPerOHM: React.FC<AbstractedMetricProps & MetricSubgraphProps
   const { data: liquidBackingPerOhmFloating } = useLiquidBackingPerOhmFloating(props.subgraphUrls);
 
   // We include floating supply in the tooltip, as it is not displayed as a separate metric anywhere else
-  const tooltip = t`Liquid backing is divided by floating supply of OHM to give liquid backing per OHM.
+  const tooltip = t`Liquid backing is divided by floating supply of TOKN to give liquid backing per TOKN.
   
-  Floating supply of OHM is the quantity of outstanding OHM not owned by the protocol (including OHM in LPs): ${
+  Floating supply of TOKN is the quantity of outstanding TOKN not owned by the protocol (including TOKN in LPs): ${
     floatingSupply ? formatNumber(floatingSupply) : "Loading..."
   }
   `;
 
   const _props: MetricProps = {
     ...props,
-    label: t`Liquid Backing per OHM`,
+    label: t`Liquid Backing per TOKN`,
     tooltip: tooltip,
   };
 
@@ -151,11 +151,11 @@ export const BackingPerOHM: React.FC<AbstractedMetricProps & MetricSubgraphProps
 export const BackingPerGOHM: React.FC<AbstractedMetricProps & MetricSubgraphProps> = props => {
   const { data: liquidBackingPerGOhmCirculating } = useLiquidBackingPerGOhm(props.subgraphUrls);
 
-  const tooltip = t`Liquid backing per gOHM is synthetically calculated as liquid backing multiplied by the current index and divided by OHM floating supply.`;
+  const tooltip = t`Liquid backing per gTOKN is synthetically calculated as liquid backing multiplied by the current index and divided by TOKN floating supply.`;
 
   const _props: MetricProps = {
     ...props,
-    label: t`Liquid Backing per gOHM`,
+    label: t`Liquid Backing per gTOKN`,
     tooltip: tooltip,
   };
 
@@ -170,10 +170,10 @@ export const CurrentIndex: React.FC<AbstractedMetricProps & MetricSubgraphProps>
   const _props: MetricProps = {
     ...props,
     label: t`Current Index`,
-    tooltip: t`The current index tracks the amount of sOHM accumulated since the beginning of staking. Basically, how much sOHM one would have if they staked and held 1 OHM from launch.`,
+    tooltip: t`The current index tracks the amount of sTOKN accumulated since the beginning of staking. Basically, how much sTOKN one would have if they staked and held 1 TOKN from launch.`,
   };
 
-  if (currentIndex) _props.metric = `${formatNumber(currentIndex, 2)} sOHM`;
+  if (currentIndex) _props.metric = `${formatNumber(currentIndex, 2)} sTOKN`;
   else _props.isLoading = true;
 
   return <Metric {..._props} />;
@@ -187,11 +187,11 @@ export const GOHMPrice: React.FC<AbstractedMetricProps> = props => {
 
   const _props: MetricProps = {
     ...props,
-    label: "gOHM " + t`Price`,
+    label: "gTOKN " + t`Price`,
     tooltip:
-      "gOHM = sOHM * index" +
+      "gTOKN = sTOKN * index" +
       "\n\n" +
-      t`The price of gOHM is equal to the price of OHM multiplied by the current index`,
+      t`The price of gTOKN is equal to the price of TOKN multiplied by the current index`,
   };
 
   if (gOhmPrice) _props.metric = formatCurrency(gOhmPrice, 2);
@@ -204,11 +204,11 @@ export const GOHMPriceFromSubgraph: React.FC<AbstractedMetricProps & MetricSubgr
   const { data: gOhmPrice } = useGOhmPriceFromSubgraph(props.subgraphUrl);
   const _props: MetricProps = {
     ...props,
-    label: "gOHM " + t`Price`,
+    label: "gTOKN " + t`Price`,
     tooltip:
-      "gOHM = sOHM * index" +
+      "gOHM = sTOKN * index" +
       "\n\n" +
-      t`The price of gOHM is equal to the price of OHM multiplied by the current index`,
+      t`The price of gTOKN is equal to the price of TOKN multiplied by the current index`,
   };
 
   if (gOhmPrice) _props.metric = formatCurrency(gOhmPrice, 2);

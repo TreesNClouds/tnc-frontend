@@ -194,17 +194,17 @@ export const LiquidBackingPerOhmComparisonGraph = ({
     setDataKeys(tempDataKeys);
 
     const itemNames: string[] = isActiveTokenOHM
-      ? [t`OHM Price`, t`Liquid Backing per Floating OHM`]
-      : [t`gOHM Price`, t`Liquid Backing per gOHM`];
+      ? [t`TOKN Price`, t`Liquid Backing per Floating TOKN`]
+      : [t`gTOKN Price`, t`Liquid Backing per gTOKN`];
 
     setCategoriesMap(getCategoriesMap(itemNames, tempDataKeys));
     setBulletpointStylesMap(getBulletpointStylesMap(DEFAULT_BULLETPOINT_COLOURS, tempDataKeys));
     setColorsMap(getDataKeyColorsMap(DEFAULT_COLORS, tempDataKeys));
-    setHeaderText(isActiveTokenOHM ? t`OHM Backing` : t`gOHM Backing`);
+    setHeaderText(isActiveTokenOHM ? t`TOKN Backing` : t`gTOKN Backing`);
     setTooltipText(
       isActiveTokenOHM
-        ? t`This chart compares the price of OHM against its liquid backing. When OHM is above liquid backing, the difference will be highlighted in green. Conversely, when OHM is below liquid backing, the difference will be highlighted in red.`
-        : t`This chart compares the price of gOHM against its liquid backing. When gOHM is above liquid backing, the difference will be highlighted in green. Conversely, when gOHM is below liquid backing, the difference will be highlighted in red.`,
+        ? t`This chart compares the price of TOKN against its liquid backing. When TOKN is above liquid backing, the difference will be highlighted in green. Conversely, when TOKN is below liquid backing, the difference will be highlighted in red.`
+        : t`This chart compares the price of gTOKN against its liquid backing. When gTOKN is above liquid backing, the difference will be highlighted in green. Conversely, when gTOKN is below liquid backing, the difference will be highlighted in red.`,
     );
   }, [isActiveTokenOHM]);
 

@@ -11,6 +11,7 @@ import {
 import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import DarkBg from "src/assets/backgrounds/dark-bg.png";
 import Messages from "src/components/Messages/Messages";
 import { MigrationCallToAction } from "src/components/MigrationCallToAction";
 import { MigrationNotification } from "src/components/MigrationNotification";
@@ -55,6 +56,11 @@ const classes = {
 };
 
 const StyledDiv = styled("div")(({ theme }) => ({
+  ["body"]: {
+    [theme.breakpoints.up("md")]: {
+      backgroundImage: DarkBg,
+    },
+  },
   [`& .${classes.drawer}`]: {
     [theme.breakpoints.up("md")]: {
       width: drawerWidth,
@@ -170,7 +176,7 @@ function App() {
   // ... been reloaded within App.
   useEffect(() => {
     if (shouldTriggerSafetyCheck()) {
-      dispatch(info("Safety Check: Always verify you're on app.olympusdao.finance!"));
+      dispatch(info("Safety Check: Always verify you're on app.treesnclouds.com!"));
     }
     loadDetails("app");
   }, []);
@@ -234,14 +240,14 @@ function App() {
                     path="/stake"
                     element={<StakeVersionContainer setMigrationModalOpen={setMigrationModalOpen} />}
                   />
-                  <Route path="/v1-stake" element={<V1Stake setMigrationModalOpen={setMigrationModalOpen} />} />
-                  <Route path="/give/*" element={<Give />} />
+                  {/*<Route path="/v1-stake" element={<V1Stake setMigrationModalOpen={setMigrationModalOpen} />} />*/}
+                  {/*<Route path="/give/*" element={<Give />} />*/}
 
-                  <Route path="/olympusgive" element={<Navigate to="/give" />} />
-                  <Route path="/olygive" element={<Navigate to="/give" />} />
-                  <Route path="/tyche" element={<Navigate to="/give" />} />
-                  <Route path="/olympusdaogive" element={<Navigate to="/give" />} />
-                  <Route path="/ohmgive" element={<Navigate to="/give" />} />
+                  {/*<Route path="/olympusgive" element={<Navigate to="/give" />} />*/}
+                  {/*<Route path="/olygive" element={<Navigate to="/give" />} />*/}
+                  {/*<Route path="/tyche" element={<Navigate to="/give" />} />*/}
+                  {/*<Route path="/olympusdaogive" element={<Navigate to="/give" />} />*/}
+                  {/*<Route path="/ohmgive" element={<Navigate to="/give" />} />*/}
 
                   <Route path="/wrap" element={<Wrap />} />
                   <Route path="/zap" element={<Zap />} />
@@ -249,8 +255,8 @@ function App() {
                   <Route path="/bridge" element={<Bridge />} />
                   <Route path="/dashboard/*" element={<TreasuryDashboard />} />
 
-                  <Route path={"/info/*"} element={<Wallet open={true} component="info" />} />
-                  <Route path={"/utility"} element={<Wallet open={true} component="utility" />} />
+                  {/*<Route path={"/info/*"} element={<Wallet open={true} component="info" />} />*/}
+                  {/*<Route path={"/utility"} element={<Wallet open={true} component="utility" />} />*/}
                   <Route path={"/wallet/history"} element={<Wallet open={true} component="wallet/history" />} />
                   <Route path="/wallet" element={<Wallet open={true} component="wallet" />}></Route>
                   <Route path="*" element={<NotFound />} />
