@@ -2,6 +2,7 @@ import { Box, Container, Grid, useMediaQuery, useTheme } from "@mui/material";
 import { Metric, MetricCollection, Paper, TabBar } from "@olympusdao/component-library";
 import { memo, useEffect, useState } from "react";
 import { Outlet, Route, Routes, useSearchParams } from "react-router-dom";
+import PageTitle from "src/components/PageTitle";
 import { SafariFooter } from "src/components/SafariFooter";
 import { adjustDateByDays, getISO8601String } from "src/helpers/DateHelper";
 import { updateSearchParams } from "src/helpers/SearchParamsHelper";
@@ -20,6 +21,7 @@ import {
   PARAM_TOKEN_OHM,
 } from "src/views/TreasuryDashboard/components/Graph/Constants";
 import { LiquidBackingPerOhmComparisonGraph } from "src/views/TreasuryDashboard/components/Graph/LiquidBackingComparisonGraph";
+import { OhmSupplyGraph } from "src/views/TreasuryDashboard/components/Graph/OhmSupplyGraph";
 import { ProtocolOwnedLiquidityGraph } from "src/views/TreasuryDashboard/components/Graph/OwnedLiquidityGraph";
 import { TreasuryAssets } from "src/views/TreasuryDashboard/components/Graph/TreasuryAssets";
 import KnownIssues from "src/views/TreasuryDashboard/components/KnownIssues/KnownIssues";
@@ -138,6 +140,7 @@ const MetricsDashboard = () => {
 
   const paperProps = {
     fullWidth: true,
+    enableBackground: true,
   };
 
   /**
@@ -246,6 +249,11 @@ const MetricsDashboard = () => {
         </Grid>
         <Grid item xs={12}>
           <Paper {...paperProps} style={paperStyles}>
+            <OhmSupplyGraph subgraphUrls={subgraphUrls} earliestDate={earliestDate} subgraphDaysOffset={daysOffset} />
+          </Paper>
+        </Grid>
+        <Grid item xs={12}>
+          <Paper {...paperProps} style={paperStyles}>
             <KnownIssues />
           </Paper>
         </Grid>
@@ -260,14 +268,18 @@ const PageWrapper = () => {
   const isVerySmallScreen = useMediaQuery("(max-width: 379px)");
 
   return (
-    <Container
-      style={{
-        paddingLeft: isSmallScreen || isVerySmallScreen ? "0" : "3.3rem",
-        paddingRight: isSmallScreen || isVerySmallScreen ? "0" : "3.3rem",
-      }}
-    >
-      <Outlet />
-    </Container>
+    <>
+      <PageTitle name="Dashboard" />
+
+      <Container
+        style={{
+          paddingLeft: isSmallScreen || isVerySmallScreen ? "0" : "3.3rem",
+          paddingRight: isSmallScreen || isVerySmallScreen ? "0" : "3.3rem",
+        }}
+      >
+        <Outlet />
+      </Container>
+    </>
   );
 };
 const TreasuryDashboard = () => {
