@@ -1,4 +1,3 @@
-import { t } from "@lingui/macro";
 import { useTheme } from "@mui/material/styles";
 import { CSSProperties, useEffect, useMemo, useState } from "react";
 import Chart from "src/components/Chart/Chart";

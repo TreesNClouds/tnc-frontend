@@ -1,4 +1,3 @@
-import { t } from "@lingui/macro";
 import { Metric } from "@olympusdao/component-library";
 import { formatCurrency, formatNumber } from "src/helpers";
 import { SUBGRAPH_URLS } from "src/helpers/SubgraphUrlHelper";
@@ -97,7 +96,7 @@ export const OhmCirculatingSupply: React.FC<AbstractedMetricProps & MetricSubgra
   const _props: MetricProps = {
     ...props,
     label: t`TOKN Circulating Supply / Total`,
-    tooltip: t`Circulating supply is the quantity of outstanding OHM not owned by the protocol (excluding TOKN in LPs).`,
+    tooltip: t`Circulating supply is the quantity of outstanding TOKN not owned by the protocol in the treasury. TOKN deployed in Protocol-Owned Liquidity is therefore included in circulating supply.`,
   };
 
   if (circSupply && totalSupply) _props.metric = `${formatNumber(circSupply)} / ${formatNumber(totalSupply)}`;
@@ -129,9 +128,7 @@ export const BackingPerOHM: React.FC<AbstractedMetricProps & MetricSubgraphProps
   const { data: liquidBackingPerOhmFloating } = useLiquidBackingPerOhmFloating(props.subgraphUrls);
 
   // We include floating supply in the tooltip, as it is not displayed as a separate metric anywhere else
-  const tooltip = t`Liquid backing is divided by floating supply of TOKN to give liquid backing per TOKN.
-  
-  Floating supply of TOKN is the quantity of outstanding TOKN not owned by the protocol (including TOKN in LPs): ${
+  const tooltip = `Liquid backing is divided by floating supply of TOKN to give liquid backing per TOKN.\n\nFloating supply is the quantity of outstanding TOKN not held by the protocol in the treasury and not deployed in Protocol-Owned Liquidity: ${
     floatingSupply ? formatNumber(floatingSupply) : "Loading..."
   }
   `;
@@ -170,10 +167,10 @@ export const CurrentIndex: React.FC<AbstractedMetricProps & MetricSubgraphProps>
   const _props: MetricProps = {
     ...props,
     label: t`Current Index`,
-    tooltip: t`The current index tracks the amount of sTOKN accumulated since the beginning of staking. Basically, how much sTOKN one would have if they staked and held 1 TOKN from launch.`,
+    tooltip: t`The current index tracks the amount of TOKN accumulated since the beginning of staking. Basically, how much TOKN one would have if they staked and held 1 TOKN from launch.`,
   };
 
-  if (currentIndex) _props.metric = `${formatNumber(currentIndex, 2)} sTOKN`;
+  if (currentIndex) _props.metric = `${formatNumber(currentIndex, 2)} TOKN`;
   else _props.isLoading = true;
 
   return <Metric {..._props} />;
@@ -187,11 +184,11 @@ export const GOHMPrice: React.FC<AbstractedMetricProps> = props => {
 
   const _props: MetricProps = {
     ...props,
-    label: "gTOKN " + t`Price`,
+    label: "gTOKN " + `Price`,
     tooltip:
       "gTOKN = sTOKN * index" +
       "\n\n" +
-      t`The price of gTOKN is equal to the price of TOKN multiplied by the current index`,
+      `The price of gTOKN is equal to the price of TOKN multiplied by the current index`,
   };
 
   if (gOhmPrice) _props.metric = formatCurrency(gOhmPrice, 2);
@@ -204,11 +201,11 @@ export const GOHMPriceFromSubgraph: React.FC<AbstractedMetricProps & MetricSubgr
   const { data: gOhmPrice } = useGOhmPriceFromSubgraph(props.subgraphUrl);
   const _props: MetricProps = {
     ...props,
-    label: "gTOKN " + t`Price`,
+    label: "gTOKN " + `Price`,
     tooltip:
-      "gOHM = sTOKN * index" +
+      "gTOKN = sTOKN * index" +
       "\n\n" +
-      t`The price of gTOKN is equal to the price of TOKN multiplied by the current index`,
+      `The price of gTOKN is equal to the price of TOKN multiplied by the current index`,
   };
 
   if (gOhmPrice) _props.metric = formatCurrency(gOhmPrice, 2);
@@ -221,7 +218,7 @@ export const TotalValueDeposited: React.FC<AbstractedMetricProps & MetricSubgrap
   const { data: totalValueDeposited } = useTotalValueDeposited(props.subgraphUrl);
   const _props: MetricProps = {
     ...props,
-    label: t`Total Value Deposited`,
+    label: `Total Value Deposited`,
   };
 
   if (totalValueDeposited) _props.metric = formatCurrency(totalValueDeposited, 0);
@@ -234,7 +231,7 @@ export const StakingAPY: React.FC<AbstractedMetricProps> = props => {
   const { data: rebaseRate } = useStakingRebaseRate();
   const _props: MetricProps = {
     ...props,
-    label: t`Annualized Rebases`,
+    label: `Annualized Rebases`,
   };
 
   if (rebaseRate) {
@@ -256,7 +253,7 @@ export const TreasuryBalance: React.FC<AbstractedMetricProps & MetricSubgraphPro
 
   const _props: MetricProps = {
     ...props,
-    label: t`Treasury Balance`,
+    label: `Treasury Balance`,
   };
 
   if (liquidBackingQuery) _props.metric = formatCurrency(liquidBackingQuery);
