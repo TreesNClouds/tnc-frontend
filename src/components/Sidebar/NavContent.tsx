@@ -34,7 +34,7 @@ const NavContent: React.VFC = () => {
       <Box className="dapp-sidebar-inner" display="flex" justifyContent="space-between" flexDirection="column">
         <div className="dapp-menu-top">
           <Box className="branding-header">
-            <Link href="https://olympusdao.finance" target="_blank" rel="noopener noreferrer">
+            <Link href="https://treesnclouds.com" target="_blank" rel="noopener noreferrer">
               <SvgIcon
                 color="primary"
                 viewBox="0 0 50 50"
@@ -57,21 +57,21 @@ const NavContent: React.VFC = () => {
                   </Box>
                   <NavItem to="/bonds" icon="bond" label={`Bond`}>
                     <Bonds />
-                    <InverseBonds />
+                    {/*<InverseBonds />*/}
                   </NavItem>
-                  <NavItem to="/range" icon="range" label={`Range`}>
-                    <RangePrice bidOrAsk="ask" />
-                    <RangePrice bidOrAsk="bid" />
-                  </NavItem>
-                  <NavItem to="/stake" icon="stake" label={`Stake`} />
-                  <NavItem href="https://vote.olympusdao.finance/" icon="voting" label={`Governance`} />
+                  {/*<NavItem to="/range" icon="range" label={`Range`}>*/}
+                  {/*  <RangePrice bidOrAsk="ask" />*/}
+                  {/*  <RangePrice bidOrAsk="bid" />*/}
+                  {/*</NavItem>*/}
+                  {/*<NavItem to="/stake" icon="stake" label={`Stake`} />*/}
+                  {/*<NavItem href="https://vote.olympusdao.finance/" icon="voting" label={`Governance`} />*/}
                 </>
               )}
-              <Box className="menu-divider">
-                <Divider sx={{ borderColor: theme.colors.gray[600] }} />
-              </Box>
-              <NavItem icon="bridge" label={`Bridge`} to="/bridge" />
-              <NavItem icon="transparency" label={`Transparency`} href="https://www.olympusdao.finance/transparency" />
+              {/*<Box className="menu-divider">*/}
+              {/*  <Divider sx={{ borderColor: theme.colors.gray[600] }} />*/}
+              {/*</Box>*/}
+              {/*<NavItem icon="bridge" label={`Bridge`} to="/bridge" />*/}
+              {/*<NavItem icon="transparency" label={`Transparency`} href="https://www.olympusdao.finance/transparency" />*/}
               <Box className="menu-divider">
                 <Divider sx={{ borderColor: theme.colors.gray[600] }} />
               </Box>
@@ -79,24 +79,24 @@ const NavContent: React.VFC = () => {
           </div>
         </div>
         <Box>
-          <NavItem href="https://forum.olympusdao.finance/" icon="forum" label={`Forum`} />
-          <NavItem href="https://docs.olympusdao.finance/" icon="docs" label={`Docs`} />
-          <NavItem href="https://immunefi.com/bounty/olympus/" icon="alert-circle" label={`Bug Bounty`} />
-          <NavItem href="https://grants.olympusdao.finance/" icon="grants" label={`Grants`} />
+          {/*<NavItem href="https://forum.olympusdao.finance/" icon="forum" label={`Forum`} />*/}
+          <NavItem href="https://docs.treesnclouds.com/" icon="docs" label={`Docs`} />
+          {/*<NavItem href="https://immunefi.com/bounty/olympus/" icon="alert-circle" label={`Bug Bounty`} />*/}
+          {/*<NavItem href="https://grants.olympusdao.finance/" icon="grants" label={`Grants`} />*/}
           <StyledBox display="flex" justifyContent="space-around" paddingY="24px">
-            <Link href="https://github.com/OlympusDAO" target="_blank" rel="noopener noreferrer">
-              <Icon name="github" className={classes.gray} />
-            </Link>
+            {/*<Link href="https://github.com/OlympusDAO" target="_blank" rel="noopener noreferrer">*/}
+            {/*  <Icon name="github" className={classes.gray} />*/}
+            {/*</Link>*/}
 
-            <Link href="https://olympusdao.medium.com/" target="_blank" rel="noopener noreferrer">
-              <Icon name="medium" className={classes.gray} />
-            </Link>
+            {/*<Link href="https://olympusdao.medium.com/" target="_blank" rel="noopener noreferrer">*/}
+            {/*  <Icon name="medium" className={classes.gray} />*/}
+            {/*</Link>*/}
 
-            <Link href="https://twitter.com/OlympusDAO" target="_blank" rel="noopener noreferrer">
+            <Link href="https://twitter.com/token_bowls" target="_blank" rel="noopener noreferrer">
               <Icon name="twitter" className={classes.gray} />
             </Link>
 
-            <Link href="https://discord-invite.olympusdao.finance" target="_blank" rel="noopener noreferrer">
+            <Link href="https://discord.gg/treesnclouds" target="_blank" rel="noopener noreferrer">
               <Icon name="discord" className={classes.gray} />
             </Link>
           </StyledBox>

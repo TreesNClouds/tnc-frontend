@@ -58,10 +58,10 @@ export const Bond = () => {
 
   useEffect(() => {
     // On initial load, if there are no bonds, switch to inverse bonds
-    if (liveBondsV2Sucess && liveBondsV3Sucess && bonds.length === 0) {
-      console.info("There are no live bonds. Switching to inverse bonds instead.");
-      setCurrentTab("INVERSE");
-    }
+    // if (liveBondsV2Sucess && liveBondsV3Sucess && bonds.length === 0) {
+    //   console.info("There are no live bonds. Switching to inverse bonds instead.");
+    //   setCurrentTab("INVERSE");
+    // }
   }, [liveBondsV2Sucess, liveBondsV3Sucess]);
 
   return (

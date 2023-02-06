@@ -33,7 +33,7 @@ const StagingNotification = () => {
         >
           <WarningNotification dismissible square>
             You are on the staging site. Any interaction could result in loss of assets.{" "}
-            <a href="https://app.olympusdao.finance">Exit Here</a>
+            <a href="https://app.treesnclouds.com">Exit Here</a>
           </WarningNotification>
         </Box>
       )}
