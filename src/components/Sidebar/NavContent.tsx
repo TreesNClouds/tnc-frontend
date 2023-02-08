@@ -65,7 +65,7 @@ const NavContent: React.VFC = () => {
                   {/*  <RangePrice bidOrAsk="ask" />*/}
                   {/*  <RangePrice bidOrAsk="bid" />*/}
                   {/*</NavItem>*/}
-                  <NavItem to="/stake" icon="stake" label={`Stake`} />
+                  {/*<NavItem to="/stake" icon="stake" label={`Stake`} />*/}
                   {/*<NavItem href="https://vote.olympusdao.finance/" icon="voting" label={`Governance`} />*/}
                 </>
               )}

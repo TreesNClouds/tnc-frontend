@@ -18,7 +18,6 @@ import { MigrationNotification } from "src/components/MigrationNotification";
 import NavDrawer from "src/components/Sidebar/NavDrawer";
 import Sidebar from "src/components/Sidebar/Sidebar";
 import StagingNotification from "src/components/StagingNotification";
-import { StakeVersionContainer } from "src/components/StakeVersionContainer";
 import TopBar from "src/components/TopBar/TopBar";
 import Wallet from "src/components/TopBar/Wallet";
 import { shouldTriggerSafetyCheck } from "src/helpers";
@@ -227,10 +226,10 @@ function App() {
               <Suspense fallback={<div></div>}>
                 <Routes>
                   <Route path="/" element={<Navigate to="/bonds" />} />
-                  <Route
-                    path="/stake"
-                    element={<StakeVersionContainer setMigrationModalOpen={setMigrationModalOpen} />}
-                  />
+                  {/*<Route*/}
+                  {/*  path="/stake"*/}
+                  {/*  element={<StakeVersionContainer setMigrationModalOpen={setMigrationModalOpen} />}*/}
+                  {/*/>*/}
                   {/*<Route path="/v1-stake" element={<V1Stake setMigrationModalOpen={setMigrationModalOpen} />} />*/}
                   <Route path="/bonds/v3/:id" element={<BondModalContainerV3 />} />
                   {/*<Route path="/bonds/v3/inverse/:id" element={<BondModalContainerV3 />} />*/}
