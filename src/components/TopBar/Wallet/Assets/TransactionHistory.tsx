@@ -44,8 +44,8 @@ const filters: Array<{ label: string; value: "all" | Transaction["type"] }> = [
   { label: "All", value: "all" },
   { label: "Staking", value: "staking" },
   { label: "Bond", value: "bond" },
-  { label: "Zap", value: "zap" },
-  { label: "Borrow", value: "borrow" },
+  // { label: "Zap", value: "zap" },
+  // { label: "Borrow", value: "borrow" },
 ];
 
 export const TransactionHistory: FC = () => {

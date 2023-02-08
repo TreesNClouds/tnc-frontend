@@ -14,17 +14,17 @@ export const useFaucet = () => {
         throw new Error(`Faucet is not supported on this network. Please switch to Goerli Testnet to use the faucet`);
 
       let transaction;
-      if (token_ === "OHM V1") {
+      if (token_ === "TOKN V1") {
         transaction = await contract.mintOHM(0);
-      } else if (token_ === "OHM V2") {
+      } else if (token_ === "TOKN V2") {
         transaction = await contract.mintOHM(1);
-      } else if (token_ === "sOHM V1") {
+      } else if (token_ === "sTOKN V1") {
         transaction = await contract.mintSOHM(0);
-      } else if (token_ === "sOHM V2") {
+      } else if (token_ === "sTOKN V2") {
         transaction = await contract.mintSOHM(1);
-      } else if (token_ === "wsOHM") {
+      } else if (token_ === "wsTOKN") {
         transaction = await contract.mintWSOHM();
-      } else if (token_ === "gOHM") {
+      } else if (token_ === "gTOKN") {
         transaction = await contract.mintGOHM();
       } else if (token_ === "DAI") {
         transaction = await contract.mintDAI();

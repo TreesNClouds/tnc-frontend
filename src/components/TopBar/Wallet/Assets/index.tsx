@@ -1,6 +1,6 @@
 import { Box, Fade, FormControl, Link, MenuItem, Select, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { OHMTokenStackProps, SecondaryButton, WalletBalance } from "@olympusdao/component-library";
+import { SecondaryButton, WalletBalance } from "@olympusdao/component-library";
 import { FC, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -100,7 +100,7 @@ const AssetsIndex: FC<OHMAssetsProps> = (props: { path?: string }) => {
   const gohmBalances = useGohmBalance();
   const { data: gohmFuseBalance = new DecimalBigNumber("0", 18) } = useFuseBalance()[NetworkId.MAINNET];
   const { data: gohmTokemakBalance = new DecimalBigNumber("0", 18) } = useGohmTokemakBalance()[NetworkId.MAINNET];
-  const [faucetToken, setFaucetToken] = useState("OHM V2");
+  const [faucetToken, setFaucetToken] = useState("DAI");
 
   const gohmTokens = [
     gohmFuseBalance,
@@ -139,48 +139,57 @@ const AssetsIndex: FC<OHMAssetsProps> = (props: { path?: string }) => {
 
   const tokenArray = [
     {
-      symbol: ["OHM"] as OHMTokenStackProps["tokens"],
+      // symbol: ["OHM"] as OHMTokenStackProps["tokens"],
+      symbol: ["TOKN"],
       balance: formattedohmBalance,
       assetValue: ohmBalance.toApproxNumber() * ohmPrice,
       alwaysShow: true,
     },
+    // {
+    //   // symbol: ["OHM"] as OHMTokenStackProps["tokens"],
+    //   symbol: ["TOKN"],
+    //   balance: formattedV1OhmBalance,
+    //   label: "(v1)",
+    //   assetValue: v1OhmBalance.toApproxNumber() * ohmPrice,
+    //   alwaysShow: true,
+    // },
     {
-      symbol: ["OHM"] as OHMTokenStackProps["tokens"],
-      balance: formattedV1OhmBalance,
-      label: "(v1)",
-      assetValue: v1OhmBalance.toApproxNumber() * ohmPrice,
-    },
-    {
-      symbol: ["sOHM"] as OHMTokenStackProps["tokens"],
+      // symbol: ["sOHM"] as OHMTokenStackProps["tokens"],
+      symbol: ["sTOKN"],
       balance: formattedSOhmBalance,
       timeRemaining:
         nextRebaseDate && `Stakes in ${prettifySeconds((nextRebaseDate.getTime() - new Date().getTime()) / 1000)}`,
       assetValue: sOhmBalance.toApproxNumber() * ohmPrice,
-      alwaysShow: true,
+      alwaysShow: false,
       lineThreeLabel: "Rebases per day",
       lineThreeValue: Number(formattedSOhmBalance) > 0 ? `${trim(rebaseAmountPerDay, 3)} sOHM ` : undefined,
     },
+    // {
+    //   // symbol: ["sOHM"] as OHMTokenStackProps["tokens"],
+    //   symbol: ["sTOKN"],
+    //   balance: formattedV1SohmBalance,
+    //   label: "(v1)",
+    //   timeRemaining:
+    //     nextRebaseDate && `Stakes in ${prettifySeconds((nextRebaseDate.getTime() - new Date().getTime()) / 1000)}`,
+    //   assetValue: v1SohmBalance.toApproxNumber() * ohmPrice,
+    //   alwaysShow: true,
+    // },
     {
-      symbol: ["sOHM"] as OHMTokenStackProps["tokens"],
-      balance: formattedV1SohmBalance,
-      label: "(v1)",
-      timeRemaining:
-        nextRebaseDate && `Stakes in ${prettifySeconds((nextRebaseDate.getTime() - new Date().getTime()) / 1000)}`,
-      assetValue: v1SohmBalance.toApproxNumber() * ohmPrice,
-    },
-    {
-      symbol: ["wsOHM"] as OHMTokenStackProps["tokens"],
+      // symbol: ["wsOHM"] as OHMTokenStackProps["tokens"],
+      symbol: ["wsTOKN"],
       balance: formattedWsOhmBalance,
       assetValue: gOhmPrice * totalWsohmBalance.toApproxNumber(),
-      geckoTicker: "governance-ohm",
+      alwaysShow: true,
+      geckoTicker: "governance-tokn",
     },
     {
-      symbol: ["gOHM"] as OHMTokenStackProps["tokens"],
+      // symbol: ["gOHM"] as OHMTokenStackProps["tokens"],
+      symbol: ["gTOKN"],
       balance: formattedgOhmBalance,
       assetValue: gOhmPrice * totalGohmBalance.toApproxNumber(),
       pnl: formattedgOhmBalance ? 0 : formatCurrency(totalGohmBalance.toApproxNumber() * gOhmPriceChange, 2),
       alwaysShow: true,
-      geckoTicker: "governance-ohm",
+      geckoTicker: "governance-tokn",
     },
   ];
 
@@ -197,7 +206,7 @@ const AssetsIndex: FC<OHMAssetsProps> = (props: { path?: string }) => {
       pnl: Number(note.payout) === 0 ? 0 : formatCurrency(note.payout.toApproxNumber() * gOhmPriceChange, 2),
       ctaText: "Claim",
       ctaOnClick: () => navigate("/bonds"),
-      geckoTicker: "governance-ohm",
+      geckoTicker: "governance-tokn",
     })) || [];
 
   const assets = [...tokenArray, ...bondsArray];
@@ -213,7 +222,7 @@ const AssetsIndex: FC<OHMAssetsProps> = (props: { path?: string }) => {
           <WalletBalance
             title="Balance"
             usdBalance={formatCurrency(walletTotalValueUSD, 2)}
-            underlyingBalance={`${formatNumber(walletTotalValueUSD / (ohmPrice !== 0 ? ohmPrice : 1), 2)} OHM`}
+            underlyingBalance={`${formatNumber(walletTotalValueUSD / (ohmPrice !== 0 ? ohmPrice : 1), 2)} TOKN`}
           />
         </Box>
         <Box display="flex" flexDirection="row" className={classes.selector} mb="18px" mt="18px">
@@ -249,12 +258,12 @@ const AssetsIndex: FC<OHMAssetsProps> = (props: { path?: string }) => {
                   value={faucetToken}
                   onChange={event => setFaucetToken(event.target.value)}
                 >
-                  <MenuItem value="OHM V1">OHM V1</MenuItem>
-                  <MenuItem value="OHM V2">OHM V2</MenuItem>
-                  <MenuItem value="sOHM V1">sOHM V1</MenuItem>
-                  <MenuItem value="sOHM V2">sOHM V2</MenuItem>
-                  <MenuItem value="wsOHM">wsOHM</MenuItem>
-                  <MenuItem value="gOHM">gOHM</MenuItem>
+                  {/*<MenuItem value="TOKN V1">TOKN V1</MenuItem>*/}
+                  {/*<MenuItem value="TOKN V2">TOKN V2</MenuItem>*/}
+                  {/*<MenuItem value="sTOKN V1">sTOKN V1</MenuItem>*/}
+                  {/*<MenuItem value="sTOKN V2">sTOKN V2</MenuItem>*/}
+                  {/*<MenuItem value="wsTOKN">wsTOKN</MenuItem>*/}
+                  {/*<MenuItem value="gTOKN">gTOKN</MenuItem>*/}
                   <MenuItem value="DAI">DAI</MenuItem>
                   <MenuItem value="ETH">ETH</MenuItem>
                 </Select>

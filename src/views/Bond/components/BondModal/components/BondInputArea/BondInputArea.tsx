@@ -77,7 +77,7 @@ export const BondInputArea: React.VFC<{
     ? props.bond.maxPayout.inBaseToken
     : props.bond.capacity.inBaseToken
   ).toString({ decimals: 4, format: true })}${" "}
-  ${isInverseBond ? props.bond.baseToken.name : `OHM`}`;
+  ${isInverseBond ? props.bond.baseToken.name : `TOKN`}`;
 
   const quoteTokenString = `
     ${(props.bond.maxPayout.inQuoteToken.lt(props.bond.capacity.inQuoteToken)
@@ -139,7 +139,7 @@ export const BondInputArea: React.VFC<{
               approvalText={`Approve ${props.bond.quoteToken.name} to Bond`}
               message={
                 <>
-                  First time bonding <b>{props.bond.quoteToken.name}</b>? <br /> Please approve Olympus DAO to use your{" "}
+                  First time bonding <b>{props.bond.quoteToken.name}</b>? <br /> Please approve TREES N CLOUDS DAO to
                   <b>{props.bond.quoteToken.name}</b> for bonding.
                 </>
               }
@@ -176,15 +176,16 @@ export const BondInputArea: React.VFC<{
               balance={
                 <span>
                   {amountInBaseToken.toString({ decimals: 4, format: true, trim: true })}{" "}
-                  {isInverseBond ? props.bond.baseToken.name : `OHM`}{" "}
+                  {isInverseBond ? props.bond.baseToken.name : `TOKN`}{" "}
                   {!isInverseBond && !!currentIndex && (
                     <span>
-                      (≈{amountInBaseToken.div(currentIndex).toString({ decimals: 4, format: true, trim: false })} gOHM)
+                      (≈{amountInBaseToken.div(currentIndex).toString({ decimals: 4, format: true, trim: false })}{" "}
+                      gTOKN)
                     </span>
                   )}
                 </span>
               }
-              tooltip={`The total amount of payout asset you will recieve from this bond purchase. (OHM quantity will be higher due to rebasing)`}
+              tooltip={`The total amount of payout asset you will receive from this bond purchase. (TOKN quantity will be higher due to rebasing)`}
             />
 
             <DataRow
@@ -205,7 +206,7 @@ export const BondInputArea: React.VFC<{
               title={isInverseBond ? `Premium` : `Discount`}
               balance={<BondDiscount discount={props.bond.discount} textOnly />}
               tooltip={`Negative discount is bad (you pay more than the market value). The bond discount is the percentage difference between ${
-                isInverseBond ? props.bond.baseToken.name : `OHM`
+                isInverseBond ? props.bond.baseToken.name : `TOKN`
               }'s market value and the bond's price.`}
             />
 

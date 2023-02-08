@@ -3,7 +3,6 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 import {
   braveWallet,
-  coinbaseWallet,
   injectedWallet,
   metaMaskWallet,
   rainbowWallet,
@@ -55,26 +54,26 @@ const fantom: Chain = {
 export const { chains, provider, webSocketProvider } = configureChains(
   [
     { ...chain.mainnet, rpcUrls: { default: "https://rpc.ankr.com/eth" } },
-    { ...chain.polygon, rpcUrls: { default: "https://rpc.ankr.com/polygon" } },
-    { ...chain.optimism, rpcUrls: { default: "https://rpc.ankr.com/optimism" } },
-    { ...chain.arbitrum, rpcUrls: { default: "https://rpc.ankr.com/arbitrum" } },
-    {
-      ...boba,
-      iconUrl:
-        "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_boba.jpg&w=32&q=100",
-    },
-    {
-      ...avalanche,
-      iconUrl:
-        "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_avalanche.jpg&w=32&q=100",
-      rpcUrls: { default: "https://rpc.ankr.com/avalanche" },
-    },
-    {
-      ...fantom,
-      iconUrl:
-        "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_fantom.jpg&w=32&q=100",
-      rpcUrls: { default: "https://rpc.ankr.com/fantom" },
-    },
+    // { ...chain.polygon, rpcUrls: { default: "https://rpc.ankr.com/polygon" } },
+    // { ...chain.optimism, rpcUrls: { default: "https://rpc.ankr.com/optimism" } },
+    // { ...chain.arbitrum, rpcUrls: { default: "https://rpc.ankr.com/arbitrum" } },
+    // {
+    //   ...boba,
+    //   iconUrl:
+    //     "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_boba.jpg&w=32&q=100",
+    // },
+    // {
+    //   ...avalanche,
+    //   iconUrl:
+    //     "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_avalanche.jpg&w=32&q=100",
+    //   rpcUrls: { default: "https://rpc.ankr.com/avalanche" },
+    // },
+    // {
+    //   ...fantom,
+    //   iconUrl:
+    //     "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_fantom.jpg&w=32&q=100",
+    //   rpcUrls: { default: "https://rpc.ankr.com/fantom" },
+    // },
     { ...chain.goerli, rpcUrls: { default: "https://rpc.ankr.com/eth_goerli" } },
   ],
   [
@@ -95,7 +94,7 @@ const connectors = connectorsForWallets([
       braveWallet({ chains, shimDisconnect: true }),
       rainbowWallet({ chains }),
       walletConnectWallet({ chains }),
-      coinbaseWallet({ appName: "Olympus DAO", chains }),
+      // coinbaseWallet({ appName: "Olympus DAO", chains }),
       ...(needsInjectedWalletFallback ? [injectedWallet({ chains, shimDisconnect: true })] : []),
     ],
   },

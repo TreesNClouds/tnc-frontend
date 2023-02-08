@@ -23,26 +23,26 @@ import { BalancerV2Pool__factory, IERC20__factory, PairContract__factory } from 
 
 export const OHM_TOKEN = new Token({
   icons: ["OHM"],
-  name: "OHM",
+  name: "TOKN",
   decimals: 9,
   addresses: OHM_ADDRESSES,
   factory: IERC20__factory,
-  purchaseUrl: "https://app.balancer.fi/#/trade/ether/0x64aa3364f17a4d01c6f1751fd97c2bd3d7e7f1d5",
+  purchaseUrl: "https://treesnclouds.com",
 });
 
 export const SOHM_TOKEN = new Token({
   icons: ["sOHM"],
-  name: "sOHM",
+  name: "sTOKN",
   decimals: 9,
   addresses: SOHM_ADDRESSES,
   factory: IERC20__factory,
   customPricingFunc: OHM_TOKEN.getPrice,
-  purchaseUrl: "https://app.balancer.fi/#/trade/ether/0x64aa3364f17a4d01c6f1751fd97c2bd3d7e7f1d5",
+  purchaseUrl: "https://treesnclouds.com",
 });
 
 export const GOHM_TOKEN = new Token({
   icons: ["gOHM"],
-  name: "gOHM",
+  name: "gTOKN",
   decimals: 18,
   addresses: GOHM_ADDRESSES,
   factory: IERC20__factory,
@@ -51,7 +51,7 @@ export const GOHM_TOKEN = new Token({
 
 export const V1_OHM_TOKEN = new Token({
   icons: ["OHM"],
-  name: "OHM (v1)",
+  name: "TOKN (v1)",
   decimals: 9,
   addresses: V1_OHM_ADDRESSES,
   factory: IERC20__factory,
@@ -60,7 +60,7 @@ export const V1_OHM_TOKEN = new Token({
 
 export const V1_SOHM_TOKEN = new Token({
   icons: ["sOHM"],
-  name: "sOHM (v1)",
+  name: "sTOKN (v1)",
   decimals: 9,
   addresses: V1_SOHM_ADDRESSES,
   factory: IERC20__factory,
@@ -69,7 +69,7 @@ export const V1_SOHM_TOKEN = new Token({
 
 export const WSOHM_TOKEN = new Token({
   icons: ["wsOHM"],
-  name: "wsOHM",
+  name: "wsTOKN",
   decimals: 18,
   addresses: WSOHM_ADDRESSES,
   factory: IERC20__factory,

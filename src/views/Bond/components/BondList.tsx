@@ -190,7 +190,7 @@ const payoutTokenCapacity = (bond: Bond, isInverseBond: boolean) => {
     : bond.capacity.inBaseToken
   ).toString()}`;
   return `${payoutFormatter.format(parseInt(payoutTokenCapacity))} ${" "}
-  ${isInverseBond ? bond.baseToken.name : `OHM`}`;
+  ${isInverseBond ? bond.baseToken.name : `TOKN`}`;
 };
 const BondRow: React.VFC<{ bond: Bond; isInverseBond: boolean }> = ({ bond, isInverseBond }) => {
   const quoteTokenName = bond.quoteToken.name;
