@@ -1,10 +1,9 @@
 import { Box, SwipeableDrawer, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { Icon, SecondaryButton, TabBar } from "@olympusdao/component-library";
+import { Icon, SecondaryButton } from "@olympusdao/component-library";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ConnectButton, InPageConnectButton } from "src/components/ConnectButton/ConnectButton";
-import ThemeSwitcher from "src/components/TopBar/ThemeSwitch";
 import Assets from "src/components/TopBar/Wallet/Assets";
 import GetOhm from "src/components/TopBar/Wallet/GetOhm";
 import { Info } from "src/components/TopBar/Wallet/Info";
@@ -109,7 +108,7 @@ export function Wallet(props: {
           <Box display="flex" justifyContent="space-between" mb={"18px"}>
             <Box display="flex" flexDirection="row">
               <ConnectButton />
-              <ThemeSwitcher theme={props.theme} toggleTheme={props.toggleTheme} />
+              {/*<ThemeSwitcher theme={props.theme} toggleTheme={props.toggleTheme} />*/}
             </Box>
             <Box display="flex" flexDirection="row" justifyContent="flex-end" alignItems="center" textAlign="right">
               <Icon
@@ -121,14 +120,14 @@ export function Wallet(props: {
               />
             </Box>
           </Box>
-          <TabBar
-            items={[
-              { label: "Wallet", to: "/wallet" },
-              { label: "Utility", to: "/utility" },
-              { label: "Info", to: "/info" },
-            ]}
-            mb={"18px"}
-          />
+          {/*<TabBar*/}
+          {/*  items={[*/}
+          {/*    { label: "Wallet", to: "/wallet" },*/}
+          {/*    { label: "Utility", to: "/utility" },*/}
+          {/*    { label: "Info", to: "/info" },*/}
+          {/*  ]}*/}
+          {/*  mb={"18px"}*/}
+          {/*/>*/}
         </Box>
         <Box
           style={{

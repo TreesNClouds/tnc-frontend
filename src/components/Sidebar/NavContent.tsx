@@ -1,9 +1,10 @@
-import { Box, Divider, Link, Paper, SvgIcon, Typography, useTheme } from "@mui/material";
+import { Box, Link, Paper, Typography, useTheme } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Icon, NavItem } from "@olympusdao/component-library";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { ReactComponent as OlympusIcon } from "src/assets/icons/olympus-nav-header.svg";
+// import { ReactComponent as OlympusIcon } from "src/assets/icons/olympus-nav-header.svg";
+import tncLogo from "src/assets/tnc-logo.png";
 import { sortByDiscount } from "src/helpers/bonds/sortByDiscount";
 import { DecimalBigNumber } from "src/helpers/DecimalBigNumber/DecimalBigNumber";
 import { useTestableNetworks } from "src/hooks/useTestableNetworks";
@@ -35,15 +36,16 @@ const NavContent: React.VFC = () => {
         <div className="dapp-menu-top">
           <Box className="branding-header">
             <Link href="https://treesnclouds.com" target="_blank" rel="noopener noreferrer">
-              <SvgIcon
-                color="primary"
-                viewBox="0 0 50 50"
-                component={OlympusIcon}
-                style={{ minWidth: "51px", minHeight: "51px", width: "51px" }}
-              />
-              <Typography fontSize="24px" fontWeight="700" lineHeight="32px">
-                Olympus
-              </Typography>
+              {/*<SvgIcon*/}
+              {/*  color="primary"*/}
+              {/*  viewBox="0 0 50 50"*/}
+              {/*  component={OlympusIcon}*/}
+              {/*  style={{ minWidth: "51px", minHeight: "51px", width: "51px" }}*/}
+              {/*/>*/}
+              <img src={tncLogo} alt="TNC Logo" style={{ minWidth: "150px", minHeight: "150px", width: "150px" }} />
+              {/*<Typography fontSize="24px" fontWeight="700" lineHeight="32px">*/}
+              {/*  Trees N Clouds*/}
+              {/*</Typography>*/}
             </Link>
           </Box>
 
@@ -51,10 +53,10 @@ const NavContent: React.VFC = () => {
             <div className="dapp-nav" id="navbarNav">
               {chain.id === networks.MAINNET && (
                 <>
-                  <NavItem to="/dashboard" icon="dashboard" label={`Dashboard`} />
-                  <Box className="menu-divider">
-                    <Divider sx={{ borderColor: theme.colors.gray[600] }} />
-                  </Box>
+                  {/*<NavItem to="/dashboard" icon="dashboard" label={`Dashboard`} />*/}
+                  {/*<Box className="menu-divider">*/}
+                  {/*  <Divider sx={{ borderColor: theme.colors.gray[600] }} />*/}
+                  {/*</Box>*/}
                   <NavItem to="/bonds" icon="bond" label={`Bond`}>
                     <Bonds />
                     {/*<InverseBonds />*/}
@@ -63,7 +65,7 @@ const NavContent: React.VFC = () => {
                   {/*  <RangePrice bidOrAsk="ask" />*/}
                   {/*  <RangePrice bidOrAsk="bid" />*/}
                   {/*</NavItem>*/}
-                  {/*<NavItem to="/stake" icon="stake" label={`Stake`} />*/}
+                  <NavItem to="/stake" icon="stake" label={`Stake`} />
                   {/*<NavItem href="https://vote.olympusdao.finance/" icon="voting" label={`Governance`} />*/}
                 </>
               )}
@@ -72,15 +74,15 @@ const NavContent: React.VFC = () => {
               {/*</Box>*/}
               {/*<NavItem icon="bridge" label={`Bridge`} to="/bridge" />*/}
               {/*<NavItem icon="transparency" label={`Transparency`} href="https://www.olympusdao.finance/transparency" />*/}
-              <Box className="menu-divider">
-                <Divider sx={{ borderColor: theme.colors.gray[600] }} />
-              </Box>
+              {/*<Box className="menu-divider">*/}
+              {/*  <Divider sx={{ borderColor: theme.colors.gray[600] }} />*/}
+              {/*</Box>*/}
             </div>
           </div>
         </div>
         <Box>
           {/*<NavItem href="https://forum.olympusdao.finance/" icon="forum" label={`Forum`} />*/}
-          <NavItem href="https://docs.treesnclouds.com/" icon="docs" label={`Docs`} />
+          {/*<NavItem href="https://docs.treesnclouds.com/" icon="docs" label={`Docs`} />*/}
           {/*<NavItem href="https://immunefi.com/bounty/olympus/" icon="alert-circle" label={`Bug Bounty`} />*/}
           {/*<NavItem href="https://grants.olympusdao.finance/" icon="grants" label={`Grants`} />*/}
           <StyledBox display="flex" justifyContent="space-around" paddingY="24px">
@@ -98,6 +100,10 @@ const NavContent: React.VFC = () => {
 
             <Link href="https://discord.gg/treesnclouds" target="_blank" rel="noopener noreferrer">
               <Icon name="discord" className={classes.gray} />
+            </Link>
+
+            <Link href="https://docs.treesnclouds.com/" target="_blank" rel="noopener noreferrer">
+              <Icon name="docs" className={classes.gray} />
             </Link>
           </StyledBox>
         </Box>

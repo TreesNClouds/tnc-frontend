@@ -46,7 +46,11 @@ export const dark = createTheme(
           styleOverrides: `
             ${fonts}
             body {
-              background-color:${colors.gray[600]};
+              background:linear-gradient(180deg, #53893C 0%, #153418 100%);
+              background-repeat:no-repeat;
+              background-attachment:fixed;
+              font-size:0.75rem;
+              font-weight:400;
             }
             `,
         },
@@ -139,7 +143,7 @@ export const dark = createTheme(
         MuiDrawer: {
           styleOverrides: {
             paper: {
-              backgroundColor: colors.gray[700],
+              background: "linear-gradient(220deg, #50843A -30%, #153418 50%)",
               zIndex: 7,
             },
           },

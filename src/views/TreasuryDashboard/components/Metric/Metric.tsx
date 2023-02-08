@@ -47,7 +47,7 @@ export const OHMPrice: React.FC<AbstractedMetricProps> = props => {
   const { data: ohmPrice } = useOhmPrice();
   const _props: MetricProps = {
     ...props,
-    label: "OHM " + `Price`,
+    label: "TOKN Price",
     tooltip: `This price is sourced from the subgraph, so will lag the real-time market rate.`,
   };
 

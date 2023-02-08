@@ -18,6 +18,7 @@ import { MigrationNotification } from "src/components/MigrationNotification";
 import NavDrawer from "src/components/Sidebar/NavDrawer";
 import Sidebar from "src/components/Sidebar/Sidebar";
 import StagingNotification from "src/components/StagingNotification";
+import { StakeVersionContainer } from "src/components/StakeVersionContainer";
 import TopBar from "src/components/TopBar/TopBar";
 import Wallet from "src/components/TopBar/Wallet";
 import { shouldTriggerSafetyCheck } from "src/helpers";
@@ -28,8 +29,6 @@ import { getMigrationAllowances, loadAccountDetails } from "src/slices/AccountSl
 import { loadAppDetails } from "src/slices/AppSlice";
 import { AppDispatch } from "src/store";
 import { dark as darkTheme } from "src/themes/dark.js";
-import { girth as gTheme } from "src/themes/girth.js";
-import { light as lightTheme } from "src/themes/light.js";
 import { BondModalContainer } from "src/views/Bond/components/BondModal/BondModal";
 import { BondModalContainerV3 } from "src/views/Bond/components/BondModal/BondModalContainerV3";
 import { useAccount, useConnect, useNetwork, useProvider } from "wagmi";
@@ -192,7 +191,8 @@ function App() {
     setIsSidebarExpanded(false);
   };
 
-  const themeMode = theme === "light" ? lightTheme : theme === "dark" ? darkTheme : gTheme;
+  // const themeMode = theme === "light" ? lightTheme : theme === "dark" ? darkTheme : gTheme;
+  const themeMode = darkTheme;
 
   useEffect(() => {
     if (isSidebarExpanded) handleSidebarClose();
@@ -226,11 +226,11 @@ function App() {
               <MigrationCallToAction setMigrationModalOpen={setMigrationModalOpen} />
               <Suspense fallback={<div></div>}>
                 <Routes>
-                  <Route path="/" element={<Navigate to="/stake" />} />
-                  {/*<Route*/}
-                  {/*  path="/stake"*/}
-                  {/*  element={<StakeVersionContainer setMigrationModalOpen={setMigrationModalOpen} />}*/}
-                  {/*/>*/}
+                  <Route path="/" element={<Navigate to="/bonds" />} />
+                  <Route
+                    path="/stake"
+                    element={<StakeVersionContainer setMigrationModalOpen={setMigrationModalOpen} />}
+                  />
                   {/*<Route path="/v1-stake" element={<V1Stake setMigrationModalOpen={setMigrationModalOpen} />} />*/}
                   <Route path="/bonds/v3/:id" element={<BondModalContainerV3 />} />
                   {/*<Route path="/bonds/v3/inverse/:id" element={<BondModalContainerV3 />} />*/}
@@ -239,16 +239,16 @@ function App() {
                   <Route path="/bonds" element={<Bond />} />
                   {/*<Route path="/bonds/inverse" element={<Bond />} />*/}
                   {/*<Route path="/bridge" element={<Bridge />} />*/}
-                  <Route path="/dashboard/*" element={<TreasuryDashboard />} />
+                  {/*<Route path="/dashboard/*" element={<TreasuryDashboard />} />*/}
                   {/*<Route path="/range/*" element={<Range />} />*/}
-                  <Route
-                    path={"/info/*"}
-                    element={<Wallet open={true} component="info" theme={theme} toggleTheme={toggleTheme} />}
-                  />
-                  <Route
-                    path={"/utility"}
-                    element={<Wallet open={true} component="utility" theme={theme} toggleTheme={toggleTheme} />}
-                  />
+                  {/*<Route*/}
+                  {/*  path={"/info/*"}*/}
+                  {/*  element={<Wallet open={true} component="info" theme={theme} toggleTheme={toggleTheme} />}*/}
+                  {/*/>*/}
+                  {/*<Route*/}
+                  {/*  path={"/utility"}*/}
+                  {/*  element={<Wallet open={true} component="utility" theme={theme} toggleTheme={toggleTheme} />}*/}
+                  {/*/>*/}
                   <Route
                     path={"/wallet/history"}
                     element={<Wallet open={true} component="wallet/history" theme={theme} toggleTheme={toggleTheme} />}
