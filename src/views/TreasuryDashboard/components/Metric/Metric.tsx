@@ -51,7 +51,8 @@ export const OHMPrice: React.FC<AbstractedMetricProps> = props => {
     tooltip: `This price is sourced from the subgraph, so will lag the real-time market rate.`,
   };
 
-  if (ohmPrice) _props.metric = formatCurrency(ohmPrice, 2);
+  // if (ohmPrice) _props.metric = formatCurrency(ohmPrice, 2);
+  if (ohmPrice) _props.metric = formatCurrency(0, 2);
   else _props.isLoading = true;
 
   return <Metric {..._props} />;
@@ -252,7 +253,8 @@ export const TreasuryBalance: React.FC<AbstractedMetricProps & MetricSubgraphPro
     label: `Treasury Balance`,
   };
 
-  if (liquidBackingQuery) _props.metric = formatCurrency(liquidBackingQuery);
+  // if (liquidBackingQuery) _props.metric = formatCurrency(liquidBackingQuery);
+  if (liquidBackingQuery) _props.metric = formatCurrency(0);
   else _props.isLoading = true;
 
   return <Metric {..._props} />;
